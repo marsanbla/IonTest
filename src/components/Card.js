@@ -1,7 +1,7 @@
 import React from "react";
 import Spinner from "./Spinner";
 
-const Card = ({ loadingData, showData, weather, forecast }) => {
+const Card = ({ loadingData, showData, weatherData }) => {
   if (loadingData) {
     return <Spinner />;
   }
@@ -11,15 +11,11 @@ const Card = ({ loadingData, showData, weather, forecast }) => {
       {showData === true ? (
         <div className="container">
           <div className="card mb-3 mx-auto bg-dark text-light">
-            <div className="row g-0">
-              <div className="col-md-4">
-
-              </div>
-              <div className="col-md-8">
-                <div className="card-body text-start mt-2">
-                    
-                </div>
-              </div>
+            <div className="col-md-12">
+              <h3 className="card-title">{weatherData.name}</h3>
+              <h1 className="card-temp">
+                {(weatherData.main.temp - 273.15).toFixed(1)}ºC
+              </h1>
             </div>
           </div>
         </div>

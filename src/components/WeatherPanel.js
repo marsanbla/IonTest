@@ -7,10 +7,10 @@ const WeatherPanel = () => {
     let urlWeather= "https://api.openweathermap.org/data/2.5/weather?appid=247100dab1d510d61357f0ac58b625c5&lang=es";
     let cityUrl = "&q=";
 
-    let urlForecast = "api.openweathermap.org/data/2.5/forecast?appid=247100dab1d510d61357f0ac58b625c5&lang=es"
+    
 
     const [weather,setWeather] = useState([]);
-    const [forecast,setForecast] = useState([]);
+
 
     const [loading,setLoading] = useState(false);
     const [show,setShow] = useState(false);
@@ -31,30 +31,16 @@ const WeatherPanel = () => {
         {
             console.log(wheatherData);
             setWeather(wheatherData);
-        }).catch(error => {
-            console.log(error);
-            setLoading(false);
-            setShow(false);
-        });
-
-
-        urlForecast =urlForecast  + cityUrl + loc;
-        await fetch(urlForecast).then((response) =>{
-            if(!response.ok)throw {response}
-            return response.json();
-            
-        }).then((forecastData) =>
-        {
-            console.log(forecastData);
-            setForecast(forecastData);
-
-            setLoading(false);
             setShow(true);
+            setLoading(false);
         }).catch(error => {
             console.log(error);
             setLoading(false);
             setShow(false);
         });
+
+
+
     }
 
     return(
@@ -68,7 +54,7 @@ const WeatherPanel = () => {
 
         loadingData = {loading}
         weatherData = {weather}
-        forecastData = {forecast}
+ 
     />
 
    </React.Fragment>

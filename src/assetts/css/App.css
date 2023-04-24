@@ -4,11 +4,19 @@
 }
 
 body{
-  background-color: aquamarine;
+  background-color: black;
 }
 
 .input-group{
 
-  width: 60%;
+ width: 60%;
   
+}
+
+
+.card{
+  width: 20%;
+}
+.card-title{
+  align-items: center;
 }
