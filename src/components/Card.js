@@ -7,7 +7,9 @@ import { TbWorldLatitude } from "react-icons/tb";
 import { TbWorldLongitude } from "react-icons/tb";
 
 import { WiHumidity } from "react-icons/wi";
-const Card = ({ loadingData, showData, weatherData }) => {
+
+
+const Card = ({ loadingData, showData, weatherData ,imgData}) => {
   if (loadingData) {
     return <Spinner />;
   }
@@ -37,9 +39,9 @@ const Card = ({ loadingData, showData, weatherData }) => {
                   {weatherData.weather[0].description}
                 </p>
                 <img
-                  src="https://images.pexels.com/photos/2344097/pexels-photo-2344097.jpeg"
+                  src={imgData}
                   className="img-fluid rounded"
-                  alt=".."
+                  alt="Weather"
                 />
               </div>
               <div className="col-md-8">
@@ -65,7 +67,7 @@ const Card = ({ loadingData, showData, weatherData }) => {
                 <h3 className="wind-now"><BiWind/> Wind : {(weatherData.wind.speed)}m/s</h3>
                 <h3 className="Long-now"><TbWorldLongitude/> Long : {(weatherData.coord.lon)}</h3>
                 <h3 className="Lat-now"><TbWorldLatitude/>  Lat : {(weatherData.coord.lat)} </h3>
-                
+                <img src={imgData} className="img-fluid rounded" alt="Weather" />
               </div>
               </div>
             </div>

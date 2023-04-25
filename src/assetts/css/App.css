@@ -1,10 +1,10 @@
 .App {
   text-align: center;
+
   
 }
-.navbar{
-  background-color: aliceblue;
-}
+
+
 
 body {
   background: rgb(2,0,36);
@@ -14,8 +14,10 @@ body {
 .input-group {
 
   max-width: 30%;
+  transition: 2s ease-in-out;
 
 }
+
 
 
 .card {
@@ -24,11 +26,17 @@ body {
   position: relative;
 }
 
+
+
 .card-title {
   position: absolute;
   padding: 20px;
   color: black;
 
+}
+
+.card-title:hover{
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .card-date{
