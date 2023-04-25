@@ -1,5 +1,5 @@
 import React from "react";
-import '../assetts/css/Spinner.css'
+import "../assetts/css/Spinner.css";
 const Spinner = () => {
   return (
     <div className="loadingio-spinner-eclipse-7qx6c8yq5t8">

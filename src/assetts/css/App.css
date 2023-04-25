@@ -2,21 +2,64 @@
   text-align: center;
   
 }
-
-body{
-  background-color: black;
+.navbar{
+  background-color: aliceblue;
 }
 
-.input-group{
+body {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(67,67,108,1) 29%, rgba(62,71,73,1) 91%);
+}
 
- width: 60%;
+.input-group {
+
+  max-width: 30%;
+
+}
+
+
+.card {
+  max-width: 60%;
+  display: flex;
+  position: relative;
+}
+
+.card-title {
+  position: absolute;
+  padding: 20px;
+  color: black;
+
+}
+
+.card-date{
+
+  position: absolute;
+  padding-left: 20px;
+  margin-top: 60px;
+  color: black;
+
+}
+
+.img-fluid{
+  max-height: 100%;
+  display: block;
+}
+
+.card-temp{
+  position: absolute;
+  padding-left: 20px;
+  margin-top: 300px;
+  font-size: 50px;
+}
+
+.descriptiow {
+  position: absolute;
+  padding-left: 20px;
+  margin-top: 350px;
   
 }
 
+.other{
+position: absolute;
 
-.card{
-  width: 20%;
-}
-.card-title{
-  align-items: center;
 }
