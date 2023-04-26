@@ -11,7 +11,6 @@ const Card = ({ loadingData, showData, weatherData }) => {
   if (loadingData) {
     return <Spinner />;
   }
-  
 
   var hoy = new Date();
   var day = hoy.getDate();
@@ -44,29 +43,35 @@ const Card = ({ loadingData, showData, weatherData }) => {
               </div>
               <div className="col-md-8">
                 <div className="card-body text-start mt-2">
-                <h5 className="card-text">
-                <BsFillSunFill />
-                  Max Temp : {(weatherData.main.temp_max - 273.15).toFixed(1)}ºC
-                  
-                </h5>
-                <h5 className="card-text">
-                  <GiThermometerCold />
-                  Min Temp : {(weatherData.main.temp_min - 273.15).toFixed(1)}ºC
-                  <img src="/src/assetts/cold.png" alt=""/>
-                </h5>
-                <h5 className="card-text">
-                  <WiHumidity />
-                <img src="/src/assetts/humidity.png" alt=""/>
-                Humidity : {weatherData.main.humidity}%
-                </h5>
-                <hr></hr>
-              </div>
-              <div className="other">
-                <h3 className="wind-now"><BiWind/> Wind : {(weatherData.wind.speed)}m/s</h3>
-                <h3 className="Long-now"><TbWorldLongitude/> Long : {(weatherData.coord.lon)}</h3>
-                <h3 className="Lat-now"><TbWorldLatitude/>  Lat : {(weatherData.coord.lat)} </h3>
-                
-              </div>
+                  <h5 className="card-text">
+                    <BsFillSunFill />
+                    Max Temp : {(weatherData.main.temp_max - 273.15).toFixed(1)}
+                    ºC
+                  </h5>
+                  <h5 className="card-text">
+                    <GiThermometerCold />
+                    Min Temp : {(weatherData.main.temp_min - 273.15).toFixed(1)}
+                    ºC
+                    <img src="/src/assetts/cold.png" alt="" />
+                  </h5>
+                  <h5 className="card-text">
+                    <WiHumidity />
+                    <img src="/src/assetts/humidity.png" alt="" />
+                    Humidity : {weatherData.main.humidity}%
+                  </h5>
+                  <hr></hr>
+                </div>
+                <div className="other">
+                  <h3 className="wind-now">
+                    <BiWind /> Wind : {weatherData.wind.speed}m/s
+                  </h3>
+                  <h3 className="Long-now">
+                    <TbWorldLongitude /> Long : {weatherData.coord.lon}
+                  </h3>
+                  <h3 className="Lat-now">
+                    <TbWorldLatitude /> Lat : {weatherData.coord.lat}{" "}
+                  </h3>
+                </div>
               </div>
             </div>
           </div>
