@@ -1,17 +1,15 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Form from './Form';
 import Card from './Card';
-import Flickr from 'flickr-sdk';
+
 
 const WeatherPanel = () => {
   const [weather, setWeather] = useState([]);
-  const [photoUrl, setPhotoUrl] = useState('');
   const [loading, setLoading] = useState(false);
   const [show, setShow] = useState(false);
   const [location, setLocation] = useState('');
 
-  const API_KEY = '38124ec124316614eb1bd93a693e04e1';
 
   const getLocation = async (loc) => {
     setLoading(true);
@@ -31,33 +29,12 @@ const WeatherPanel = () => {
         setShow(true);
 
         // Use the Flickr API to retrieve a photo of the location
-        const flickr = new Flickr(API_KEY);
-
-        flickr.photos
-          .search({
-            text: loc,
-            per_page: 1,
-            sort: 'relevance',
-            extras: 'url_n',
-          })
-          .then((response) => {
-            const photo = response.body.photos.photo[0];
-            const photoUrl = photo.url_n;
-
-            setPhotoUrl(photoUrl);
-          });
-      })
-      .catch((error) => {
-        console.log(error);
-        setLoading(false);
-        setShow(false);
-      });
-  };
+  
 
   return (
     <React.Fragment>
       <Form newLocation={getLocation}
-      newImg={flickr} />
+       https://github.com/marsanbla/IonTest/commit/675c719814c42a7ef181e4f56da888797bead867
 
       <Card
         showData={show}
