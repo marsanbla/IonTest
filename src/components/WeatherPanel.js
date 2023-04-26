@@ -10,7 +10,6 @@ const WeatherPanel = () => {
     
 
     const [weather,setWeather] = useState([]);
-    const [img,setImg] = useState("");
     const [res,setRes] = useState([]);
 
     const [loading,setLoading] = useState(false);
@@ -64,7 +63,7 @@ const WeatherPanel = () => {
 
     <Card
         showData = {show}
-        imgData = {img}
+       
         loadingData = {loading}
         weatherData = {weather}
  
